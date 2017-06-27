@@ -2,6 +2,7 @@
 # https://github.com/nharmon/capwatch_download
 # 
 # A script for downloading CAPWATCH databases
+# Requires: Mechanize (https://pypi.python.org/pypi/mechanize/)
 # 
 import mechanize
 
