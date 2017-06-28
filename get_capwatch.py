@@ -36,9 +36,12 @@ def downloadCAPWATCH(username, password, organization, filename):
     # Prepare the CAPWATCH Download
     browser.open(download_url)
     browser.select_form('aspnetForm')
-    browser['ctl00$MainContentPlaceHolder$OrganizationChooser1$ctl00'] =\
+    try:
+        browser['ctl00$MainContentPlaceHolder$OrganizationChooser1$ctl00'] =\
                     [organization]
-    browser.submit()
+        browser.submit()
+    except:
+        exit('Invalid or unauthorized organization')
     
     # Download the CAPWATCH zipfile
     browser.select_form('aspnetForm')
